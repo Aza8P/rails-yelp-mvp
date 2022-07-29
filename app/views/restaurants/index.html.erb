@@ -1,13 +1,15 @@
 <nav class="navbar navbar-expand-lg bg-light m-2">
   <h1>Restaurant List</h1>
 </nav>
+  <div class="container">
     <% @restaurants.each do |restaurant| %>
-      <div class="card w-75 p-3">
+      <div class="card w-100 p-3 m-3 shadow bg-body rounded flex-column" style="">
         <div class="card-body">
           <h5><%= restaurant.name %></h5>
-          <p class="card-text"><%= restaurant.category %></p>
+          <p class="card-text mb-2 text-muted"><%= restaurant.category %></p>
           <p class="card-text">Address: <%= restaurant.address %></p>
           <%= link_to 'View', restaurant_path(restaurant) %>
         </div>
       </div>
     <% end %>
+  </div>
